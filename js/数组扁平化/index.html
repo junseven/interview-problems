@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const arr = [1,[2,[3,4]],"asd",6,{a:7}]
+  //console.log(flatten(arr)); 
+  // function flatten(arr){
+  //   return arr.toString().split(',').map(item => {
+  //     return Number(item)
+  //   })
+  // }
+  function flatten(arr){
+    return arr.reduce((result,item)=>{
+      return result.concat(Array.isArray(item)?flatten(item) : item)
+    },[])
+  }
+  var aar = [1, [2, [3, 4]]]
+  aar = [].concat(...[].concat(...aar))
+  console.log(aar);
+</script>
+</html>

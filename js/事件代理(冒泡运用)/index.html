@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul{
+    display: flex;
+    width: 960px;
+    text-align: center;
+
+  }
+  li{
+    flex:1;
+    width:280px;
+    height: 200px;
+    line-height: 200px;
+    list-style-type: none;
+  }
+</style>
+<body>
+  <ul class="tul">
+    <li>red</li>
+    <li>blue</li>
+    <li>yellow</li> 
+    <li>green</li>
+  </ul>
+  <div class="color">
+  </div>
+</body>
+<script>
+  var tul = document.querySelector('.tul')
+  var dcolor = document.querySelector('.color')
+  var tli = tul.getElementsByTagName('li')
+  
+  console.log(tli);
+  for(let atr of tli){
+    atr.style['background-color'] = atr.innerHTML
+  }
+  function colorChange(e){
+    var e = e || window.event
+    dcolor.innerHTML ="该颜色为" + e.target.innerHTML
+  }
+
+  tul.addEventListener('click', colorChange, false)
+  tli.addEventListener('click',()=>{alert('test')}, false)
+</script>
+</html>
