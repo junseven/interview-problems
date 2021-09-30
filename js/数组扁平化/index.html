@@ -22,6 +22,7 @@
       return result.concat(Array.isArray(item)?flatten(item) : item)
     },[])
   }
+  const res1 = arr.flat(Infinity);
   var aar = [1, [2, [3, 4]]]
   aar = [].concat(...[].concat(...aar))
   console.log(aar);
