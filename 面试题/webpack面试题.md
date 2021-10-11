@@ -1,3 +1,12 @@
+# 1.webpack 是什么？
+webpack 是一个现代 JavaScript 应用程序的静态模块打包器，当 webpack 处理应用程序时，会递归构建一个依赖关系图，其中包含应用程序需要的每个模块，然后将这些模块打包成一个或多个 bundle。
+
+# 2.webpack 的核心概念
+entry: 入口
+output: 输出
+loader: 模块转换器，用于把模块原内容按照需求转换成新内容
+插件(plugins): 扩展插件，在webpack构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要做的事情
+
 # 0.有哪些常见的Loader？你用过哪些Loader？
 * raw-loader：加载文件原始内容（utf-8）
 * file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
@@ -54,5 +63,7 @@ Webpack 的运行流程是一个串行的过程，从启动到结束会依次执
 * speed-measure-webpack-plugin：简称 SMP，分析出 Webpack 打包过程中 Loader 和 Plugin 的耗时，有助于找到构建过程中的性能瓶颈。
 * size-plugin：监控资源体积变化，尽早发现问题
 * HotModuleReplacementPlugin：模块热替换
+
+
 
 
