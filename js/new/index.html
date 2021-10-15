@@ -11,10 +11,21 @@
 </body>
 <script>
   function newfn(){
-    let target = {}
-    let [constructor,...args] = [...arguments]
-    target._proto_ = constructor.prototype
-    let res = func.apply(target,args)
+    let [constructor, ...args] = [...arguments]     //构造函数和参数分开  解构赋值
+    let obj = Object.create(constructor.prototype)
+    let res = constructor.apply(obj)
+    return  res instanceof Object ? res : obj
   }
+  function person() {
+    this.name ='qwe'
+  }
+  person.prototype.sayHello = function(){
+    console.log('hello');
+  }
+  var lisi = newfn(person)
+  //var lisi = new person()
+  console.log(lisi);
+  lisi.sayHello()
+
 </script>
 </html>

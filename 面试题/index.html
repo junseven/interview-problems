@@ -12,17 +12,21 @@
   } */
 </style>
 <body>
-
-  
-<div class="parent">
-
-  <div id="block"></div>
-
-</div>
-
-  
-
-
-
 </body>
+<script>
+  // let value = "Surprise!";
+
+    function f() {
+      let value = "the closest value";
+
+      function g() {
+        debugger; // 在 console 中：输入 alert(value); Surprise!
+      }
+
+      return g;
+    }
+
+    let g = f();
+    g();
+</script>
 </html>
