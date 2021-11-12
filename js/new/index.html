@@ -10,20 +10,26 @@
   
 </body>
 <script>
+  // 以ctor.prototype为原型创建一个对象。
+  // 执行构造函数并将this绑定到新创建的对象上。
+  // 判断构造函数执行返回的结果是否是引用数据类型，若是则返回构造函数执行的结果，否则返回创建的对象。
   function newfn(){
     let [constructor, ...args] = [...arguments]     //构造函数和参数分开  解构赋值
     let obj = Object.create(constructor.prototype)
-    let res = constructor.apply(obj)
-    return  res instanceof Object ? res : obj
+    let res = constructor.apply(obj,args)
+    const isObject = typeof res === 'object' && res !== null;
+    const isFunction = typeof res === 'function';
+    return isObject || isFunction ? res : obj;
   }
-  function person() {
-    this.name ='qwe'
+  function person(name) {
+    this.name = name
+    return {}
   }
   person.prototype.sayHello = function(){
     console.log('hello');
   }
-  var lisi = newfn(person)
-  //var lisi = new person()
+  //var lisi = newfn(person,'asd')
+  var lisi = new person('asd')
   console.log(lisi);
   lisi.sayHello()
 
