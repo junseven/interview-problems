@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    display: flex;
+  }
+  /* .box{
+    display: flex;
+    border: 2px solid black;
+    width: 84px;
+    height: 84px;
+    margin: 10px;
+  } */
+  [class^="box"] {
+  margin: 16px;
+  padding: 4px;
+  display: flex;
+  background-color: #e7e7e7;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  
+  box-shadow:
+    inset 0 5px white, 
+    inset 0 -5px #bbb,
+    inset 5px 0 #d7d7d7, 
+    inset -5px 0 #d7d7d7;
+  
+  border-radius: 10%;
+}
+  span{
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 4px;
+  }
+  .box2{
+    justify-content:space-around;
+  }
+  .box2 span:nth-of-type(2){
+    align-self: flex-end;
+    justify-items: flex-end;
+  }
+
+  .box3{
+    justify-content:space-between;
+  }
+  .box3 span:nth-of-type(2){
+    align-self: center;
+  }
+  .box3 span:nth-of-type(3){
+    align-self: flex-end;
+  }
+
+  .box4,.box6{
+    
+    justify-content:space-between;
+  }
+  .column{
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  .box5 .column:nth-of-type(2){
+    align-self: center;
+  }
+</style>
+<body>
+  <div class="box1">
+    <span></span>
+  </div>
+  <div class="box2">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="box3">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="box4">
+    <div class="column">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="column">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="box5">
+    <div class="column">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="column">
+      <span></span>
+    </div><div class="column">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="box6">
+    <div class="column">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="column">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</body>
+</html>

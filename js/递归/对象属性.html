@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const getAttribute = function(object,attribute,defaultValue){
+
+    return recursion(object, attribute.split('.'), defaultValue)
+  }
+  function recursion(obj,attr, defaultValue){
+    let attrValue = attr.splice(0, 1)
+    if(!obj[attrValue]) return defaultValue
+
+    if (attr.length === 0) return obj[attrValue]
+
+    if(obj[attrValue] instanceof Array || obj[attrValue] instanceof Object)
+    return recursion(obj[attrValue] , attr, defaultValue)
+    else
+    return obj[attr]
+
+  }
+  const obj = { a: { b: { c: 100 } }, d: [{ f: 'abc' }] };
+
+  console.log(getAttribute(obj, 'a.b.c', 0));
+  console.log(getAttribute(obj, 'a.b.e', 'default') );
+  console.log(getAttribute(obj, 'd.0.f')  );
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
+  header,footer{
+    flex:1;
+    background-color: coral;
+  }
+  .HolyGrail-body{
+    flex:1;
+    display: flex;
+  }
+  .HolyGrail-content{
+    flex: 1;
+    background-color: cyan;
+  }
+  .HolyGrail-nav,.HolyGrail-ads{
+    flex:0 0 12em;
+    background-color: crimson;
+  }
+  .HolyGrail-nav{
+    order:-1
+  }
+</style>
+<body class="HolyGrail">
+  <header>头部</header>
+  <div class="HolyGrail-body">
+    <main class="HolyGrail-content">..主体撒撒撒是啊是爱仕达爱上左侧q啊额大叔的撒撒撒是啊是爱仕达爱上左侧q啊额大叔的撒撒撒是啊是.</main>
+    <nav class="HolyGrail-nav">...</nav>
+    <aside class="HolyGrail-ads">...</aside>
+  </div>
+  <footer >尾部</footer>
+</body>
+</html>
